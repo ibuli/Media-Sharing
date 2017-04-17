@@ -1,0 +1,25 @@
+[{
+    "id": 1,
+    "firstname": "Burhan",
+    "lastname": "Bharmal",
+    "gender": "male",
+    "mnumber": 9687907552,
+    "username": "Buli",
+    "email": "burhan.bharmal@iflair.com"
+  }, {
+   "id": 2,
+    "firstname": "Ishaque",
+    "lastname": "Mev",
+    "gender": "male",
+    "mnumber": 7874227700,
+    "username": "Ishaq",
+    "email": "ishaque.mev@iflair.com"
+  }, {
+   "id": 3,
+    "firstname": "Nasir",
+    "lastname": "Saiyed",
+    "gender": "male",
+    "mnumber": 7405482032,
+    "username": "Nasru",
+    "email": "nasir.saiyed@iflair.com"
+  }]

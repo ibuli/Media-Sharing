@@ -1,0 +1,30 @@
+<div class="container" ng-controller="userController">
+  <h2>All The Users</h2>
+  	<div>
+        <div align="left">Search :
+        <input ng-model="query" /></div>
+    </div>
+  <hr>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Gender</th>
+        <th>Mobile Number</th>
+        <th>Username</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in users.data | filter: query">
+        <td>{{user.firstname}}</td>
+        <td>{{user.lastname}}</td>
+        <td>{{user.gender}}</td>
+        <td>{{user.mnumber}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

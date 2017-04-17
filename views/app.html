@@ -1,0 +1,13 @@
+<div class="jumbotron">
+		<div class="container" ng-show="!loggedIn">
+    		<h1 >Hello, world!</h1>
+		  	<p>Please Login/Signup</p>
+		  	<p><a class="btn btn-primary btn-lg" href="#!login" role="button">Login/Signup</a></p>
+  		</div>
+
+  		<div class="container" ng-show="loggedIn">
+    		<h1 >Hello, {{data.username}}!</h1>
+		  	
+		  	<p><a class="btn btn-primary btn-lg" href="#!contact-us" role="button">Contact Us</a></p>
+  		</div>
+</div>

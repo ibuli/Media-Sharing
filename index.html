@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>Sample App</title>
+	
+	<link rel="stylesheet" type="text/css" href="../scripts/bootstrap/css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="../scripts/css/style.css"/>
+
+	<script type="text/javascript" src="../scripts/angular/angular.min.js"></script>
+	<script type="text/javascript" src="http://unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src="../scripts/ng-file-upload/ng-file-upload-shim.min.js"></script>
+	<script type="text/javascript" src="../scripts/ng-file-upload/ng-file-upload.min.js"></script>
+	<script type="text/javascript" src="../scripts/app.js"></script>
+	<script type="text/javascript" src="../controllers/signup-controller.js"></script>
+	<script type="text/javascript" src="../controllers/login-controller.js"></script>
+	<script type="text/javascript" src="../controllers/user-controller.js"></script>
+	<script type="text/javascript" src="../controllers/contact-controller.js"></script>
+	<script type="text/javascript" src="../controllers/dashboard-controller.js"></script>
+</head>
+<body>
+	<nav class="nav navbar navbar-inverse" ng-controller="loginController">
+		<div class="container" ng-show="!loggedIn">
+			<a class="navbar-brand" href="#">SPA</a>
+			<a class="navbar-text navbar-right" href="#!/login">Login</a>
+			<a class="navbar-text navbar-right" href="#!/signup">Signup</a>
+		</div>
+
+		<div class="container" ng-show="loggedIn">
+			<a class="navbar-brand" href="#">SPA</a>
+			<a class="navbar-text navbar-right" ng-click="logout()">Logout</a>
+			<a class="navbar-text navbar-right" href="#!/contact-us">Contact</a>
+			<a class="navbar-text navbar-right" href="#!/users">Users</a>
+			<a class="navbar-text navbar-right" href="#!/profile">Profile</a>
+			
+		</div>
+	</nav>
+
+	<main>
+		<div ui-view>
+			
+		</div>
+	</main>
+
+	<footer>
+		<a href="#!">Single Page Application Demo</a> Copyright &copy; <a href="http://www.iburhan.me" target="_blank">Burhan Bharmal </a> | 2017
+	</footer>
+</body>
+
+</html>
