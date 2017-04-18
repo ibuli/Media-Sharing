@@ -1,0 +1,25 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ibuli/Authenticaition.git"
+  },
+  "author": "Buli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ibuli/Authenticaition/issues"
+  },
+  "homepage": "https://github.com/ibuli/Authenticaition#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.5",
+    "nodemon": "^1.11.0"
+  }
+}
