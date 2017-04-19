@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="col-md-4">
+    <h2>Make a new post</h2>
+        <form ng-controller="newpostController" name="form">
+                <!-- Write something about this post: -->
+                <input type="text" class="form-control" placeholder="What's on your mind?" ng-model="content"><br><label class="btn btn-default btn-file">
+                    Browse <input type="file" 
+                            ngf-select 
+                            ng-model="file" 
+                            name="file" 
+                            ngf-pattern="'image/*'"
+                            accept="image/*" 
+                            ngf-max-size="20MB" style="display: none;">
+                </label>
+                <br><br>
+            Image thumbnail: <img style="width:100px;" ngf-thumbnail="file"/> <br> <hr>
+            <!-- || '/thumb.jpg' -->
+            <!-- <i ng-show="form.file.$error.required">*required</i><br>
+            <i ng-show="form.file.$error.maxSize">File too large 
+            {{up.file.size / 1000000|number:1}}MB: max 20M</i> -->
+           <!--  Multiple files
+            <div class="button" ngf-select ng-model="up.files" ngf-multiple="true">Select</div>
+            Drop files: <div ngf-drop ng-model="up.files" class="drop-box">Drop</div> -->
+            <button type="submit" class="btn btn-sm btn-primary" ng-click="upload(file)">submit</button><br> <br>
+            <span class="progress" ng-show="file.progress >= 0">
+		        <div style="width:{{file.progress}}%" 
+		            ng-bind="file.progress + '%'"></div>
+		      </span>
+		      <label ng-show="file.result">Upload Successful</label>
+		      <label class="err" ng-show="errorMsg">{{errorMsg}}</label>
+		</form>
+    </div>
+
+    <div class="col-md-2"></div>
+
+    <div class="col-md-8">
+    <h2 style="padding-left: 10px;">Your posts</h2>
+        <div ng-repeat="post in posts | orderBy: date" class="col-md-4">
+                
+        <!-- <img ng-src="{{post.imgPath}}" class=""> -->
+        <img ng-src="{{post.imgPath}}" class="img-rounded" alt="" width="200" height="200"> 
+        <label style="font-size: 20px;">{{post.content}} </label>
+        <hr>
+        </div>
+    </div>
+</div>
+
+

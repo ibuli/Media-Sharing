@@ -8,9 +8,13 @@ module.exports.login = function(req, res){
 
 		if(results && results.length === 1) {
 			var userData = results[0];
-			res.json({email: req.body.email,
-					  _id: userData._id,
-					  password: userData.password
+			res.json({
+						_id: userData._id,
+						firstname: userData.firstname,
+						lastname: userData.lastname,
+						mnumber: userData.mnumber,
+						username: userData.username,
+						email: req.body.email
 					});
 			
 		} 

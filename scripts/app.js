@@ -45,10 +45,16 @@ angular.module('app', ['ui.router', 'ngFileUpload'])
 				controller: 'contactController',
 				requireLogin: true
 			})
+			.state('newpost', {
+				url: '/new-post',
+				templateUrl: 'views/newpost.html',
+				controller: 'newpostController',
+				requireLogin: true
+			})
 
 		}])
 
-	.run(function($rootScope) {
+	.run(function($rootScope, $location) {
 		$rootScope.$on("$stateChangeStart", function(event, toState, fromState) {
 			if(toState.requireLogin && !$rootScope.loggedIn) {
 				alert("Please Login!!");
@@ -57,10 +63,12 @@ angular.module('app', ['ui.router', 'ngFileUpload'])
 			else if(toState.name == 'login' && $rootScope.loggedIn) {
 				alert("Already Logged In");
 				event.preventDefault();
+				$location.path('/dashboard');
 			}
 			else if(toState.name == 'signup' && $rootScope.loggedIn) {
 				alert("Already Registered");
 				event.preventDefault();
+				$location.path('/dashboard');
 			}
 		})
 	});
