@@ -21,6 +21,7 @@ angular.module('app')
 					$scope.postData = data;
 					console.log($scope.postData);
 					$scope.file.result = true;
+					getPosts();
 				}).error(function(error){
 	        		$scope.errorMsg = "Something went wrong";
 				});
@@ -33,6 +34,7 @@ angular.module('app')
 		function getPosts() {
 			$http.get('api/get-post').then(function(response) {
 				$scope.posts = response.data;
+				$scope.status = true;
 				console.log($scope.posts);
 			});
 		}
