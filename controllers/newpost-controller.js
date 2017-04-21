@@ -20,10 +20,11 @@ angular.module('app')
 					//Here comes all the post data.
 					$scope.postData = data;
 					console.log($scope.postData);
-					$scope.file.result = true;
 					getPosts();
-					$scope.file = '';
-					$scope.content = '';
+					$scope.file.result = true;
+					console.log($scope.file.result);
+					// $scope.file = '';
+					// $scope.content = '';
 				}).error(function(error){
 	        		$scope.errorMsg = "Something went wrong";
 				});
