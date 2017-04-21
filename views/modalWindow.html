@@ -1,24 +1,15 @@
 <div class="modal-header" >
  <h3 class="modal-title" id="modal-title">{{posts[index].username}}</h3>
+ <label style="font-size: 10px;">Posted at: {{posts[index].post_created_at}}</label><br>
 </div>
 <div class="modal-body" id="modal-body">
 	<!-- {{$root.index}} -->
 	<div>
-		<label style="font-size: 10px;">{{posts[index].post_created_at}}</label><br>
+		
 		<label style="font-size: 20px;">{{posts[index].content}}</label><br>
 		<img ng-src="{{posts[index].imgPath}}" class="img-rounded" alt="" width="870" height="500"/>
 
 	</div>
-	<!-- <form name="beerForm" novalidate> 
-      <div class="form-group">
-        <label> Beer Name</label>
-        <input type="text" class="form-control" placeholder="beer" ng-model="beerName">
-      </div>
-      <div class="form-group">
-        <label> IBU</label>
-        <input type="number" class="form-control" placeholder="IBU" ng-model="beerIBU">
-      </div>
-    </form> -->
 </div>
 <div class="modal-footer">
  <button class="btn btn-primary" type="button" ng-click="ok()">Ok</button>

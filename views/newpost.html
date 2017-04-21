@@ -1,6 +1,6 @@
 <div class="container">
     <div class="col-md-4">
-    <h2>Make a new post</h2>
+    <h2>Make a new post :D</h2>
         <form ng-controller="newpostController" name="form">
                 <!-- Write something about this post: -->
                 <input type="text" class="form-control" placeholder="What's on your mind?" ng-model="content"><br><label class="btn btn-default btn-file">
@@ -22,10 +22,10 @@
             <div class="button" ngf-select ng-model="up.files" ngf-multiple="true">Select</div>
             Drop files: <div ngf-drop ng-model="up.files" class="drop-box">Drop</div> -->
             <button type="submit" class="btn btn-sm btn-primary" ng-click="upload(file)">submit</button><br> <br>
-            <span class="progress" ng-show="file.progress >= 0">
+           <!--  <span class="progress" ng-show="file.progress >= 0">
 		        <div style="width:{{file.progress}}%" 
 		            ng-bind="file.progress + '%'"></div>
-		      </span>
+		      </span> -->
 		      <label ng-show="file.result">Upload Successful</label>
 		      <label class="err" ng-show="errorMsg">{{errorMsg}}</label>
 		</form>
@@ -34,12 +34,12 @@
     <div class="col-md-2"></div>
 
     <div class="col-md-8">
-        <h2 style="padding-left: 10px;">Your posts</h2>
-        <div ng-repeat="post in posts" class="col-md-4">
+        <h2 style="padding-left: 10px;">Your posts :p</h2>
+        <div ng-repeat="post in posts | orderBy: 'post_created_at':true" class="col-md-4">
         <label style="font-size: 25px;">{{post.username}}</label><br>
         <label>Posted at: {{post.post_created_at | date}}</label>
         <!-- <img ng-src="{{post.imgPath}}" class=""> -->
-        <img ng-src="{{post.imgPath}}" class="img-rounded" alt="" width="200" height="200"> 
+        <img ng-src="{{post.imgPath}}" class="img-rounded" alt="" width="200" height="200" ng-click="displayImage($index)"> 
         <label style="font-size: 20px;">{{post.content}} </label>
         <hr>
         </div>

@@ -1,6 +1,6 @@
 angular.module('app')
 
-	.controller('newpostController', function($scope, Upload, $http) {
+	.controller('newpostController', function($scope, Upload, $http, $rootScope, $uibModal, $timeout) {
 		
 		$scope.upload = function(file) {
 			if ($scope.form.file.$valid && $scope.file) {
@@ -22,6 +22,8 @@ angular.module('app')
 					console.log($scope.postData);
 					$scope.file.result = true;
 					getPosts();
+					$scope.file = '';
+					$scope.content = '';
 				}).error(function(error){
 	        		$scope.errorMsg = "Something went wrong";
 				});
@@ -31,13 +33,36 @@ angular.module('app')
 		    }
 		};
 
-		function getPosts() {
+		// function getPosts() {
+		// 	$http.get('api/get-post').then(function(response) {
+		// 		$scope.posts = response.data;
+		// 		$scope.status = true;
+		// 		console.log($scope.posts);
+		// 	});
+		// }
+
+		// getPosts();
+		$scope.displayImage = function(index){
+			console.log(index);
+			$rootScope.index = index;
+			$scope.modalInstance = $uibModal.open({
+			ariaLabelledBy: 'modal-title',
+			ariaDescribedBy: 'modal-body',
+			templateUrl: 'views/modalWindow.html',
+			controller :'ModelHandlerController',
+			// controllerAs: '$ctrl',
+			size: 'lg',
+			resolve: {
+				}
+ 			});
+ 		}
+ 		function getPosts() {
 			$http.get('api/get-post').then(function(response) {
-				$scope.posts = response.data;
+				$rootScope.posts = response.data;
 				$scope.status = true;
+				
 				console.log($scope.posts);
 			});
 		}
-
 		getPosts();
 	});
