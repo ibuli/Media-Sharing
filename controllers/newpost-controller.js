@@ -19,7 +19,7 @@ angular.module('app')
 				}).success(function(data){
 					//Here comes all the post data.
 					$scope.postData = data;
-					console.log($scope.postData);
+					//console.log($scope.postData);
 					getPosts();
 					$scope.file.result = true;
 					console.log($scope.file.result);
@@ -61,8 +61,8 @@ angular.module('app')
 			$http.get('api/get-post').then(function(response) {
 				$rootScope.posts = response.data;
 				$scope.status = true;
-				
-				console.log($scope.posts);
+				var a = $rootScope.posts.reverse();
+				console.log(a);
 			});
 		}
 		getPosts();
