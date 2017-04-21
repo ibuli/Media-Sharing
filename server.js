@@ -35,6 +35,7 @@ app.post('/api/user/login', loginController.login);
 
 app.post('/api/upload', multipartMiddleware, newpostController.upload);
 app.get('/api/get-post', postController.display);
+
 //start our app
 app.listen(process.env.PORT || '3000', function(){
 	console.log("Listening on port 3000");

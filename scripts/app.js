@@ -1,4 +1,4 @@
-angular.module('app', ['ui.router', 'ngFileUpload'])
+angular.module('app', ['ui.router', 'ngFileUpload', 'ui.bootstrap.modal', 'ui.bootstrap.tpls', 'ngAnimate', 'ngTouch'])
 
 	.config(['$urlRouterProvider','$stateProvider', function($urlRouterProvider, $stateProvider){
 		
@@ -49,6 +49,12 @@ angular.module('app', ['ui.router', 'ngFileUpload'])
 				url: '/new-post',
 				templateUrl: 'views/newpost.html',
 				controller: 'newpostController',
+				requireLogin: true
+			})
+			.state('modal', {
+				url: '/modal',
+				templateUrl: 'views/modal.html',
+				controller: 'modalController',
 				requireLogin: true
 			})
 
