@@ -31,6 +31,7 @@ angular.module('app', ['ui.router', 'ngFileUpload', 'ui.bootstrap.modal', 'ui.bo
 			.state('profile', {
 				url: '/profile',
 				templateUrl: 'views/profile.html',
+				controller: 'editProfileController',
 				requireLogin: true
 			})
 			.state('users', {

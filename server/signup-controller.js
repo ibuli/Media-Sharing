@@ -9,6 +9,10 @@ var userSchema = new mongoose.Schema({
 	username: String,
 	email: String,
 	password: String,
+	profilePhoto: {
+		type: String,
+		default: '/data/avatar.png'
+	},
 	acc_created_at: {
 		type: Date, 
 		default: Date.now

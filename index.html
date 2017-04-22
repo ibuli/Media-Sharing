@@ -29,6 +29,7 @@
 	<script type="text/javascript" src="../controllers/dashboard-controller.js"></script>
 	<script type="text/javascript" src="../controllers/newpost-controller.js"></script>
 	<script type="text/javascript" src="../controllers/modal-controller.js"></script>
+	<script type="text/javascript" src="../controllers/edit-profile-controller.js"></script>
 </head>
 <body>
 <div class="div-setting">
@@ -40,7 +41,7 @@
 			<a class="navbar-text navbar-right" href="#!/signup">Signup</a>
 		</div>
 
-		<div class="container" ng-show="loggedIn">
+		<!-- <div class="container" ng-show="loggedIn">
 			<a class="navbar-brand" href="#!/dashboard">Media Sharing</a>
 			<a class="navbar-text navbar-left" href="#!/new-post">New Post</a>
 			<a class="navbar-text navbar-right" ng-click="logout()">Logout</a>
@@ -48,6 +49,28 @@
 			<a class="navbar-text navbar-right" href="#!/users">Users</a>
 			<a class="navbar-text navbar-right" href="#!/profile">Profile</a>
 			
+		</div> -->
+		<div class="container" ng-show="loggedIn">
+			<a class="navbar-brand" href="#!/dashboard">Media Sharing</a>
+			<a class="navbar-text navbar-left" href="#!/new-post">New Post</a>
+
+			<ul class="nav navbar-nav navbar-right" ng-show="loggedIn">
+				<li><a href="#!/users">Users</a></li>
+				<li><a href="#!/contact-us">Contact Us</a></li>
+				<li class="dropdown" >
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
+		          <img ng-src="{{data.profilePhoto}}" id="propic"> &nbsp;Profile <b class="caret"></b></a>
+
+		          <ul class="dropdown-menu">
+		            <li><a href="#!/profile">Edit Profile</a></li>
+		            <li><a href="#">Settings</a></li>
+		            <!-- <li><a href="#">Something else here</a></li> -->
+		            <li class="divider"></li>
+		            <li><a ng-click="logout()">Logout</a></li>
+		          </ul>
+		        </li>
+
+			</ul>
 		</div>
 	</nav>
 

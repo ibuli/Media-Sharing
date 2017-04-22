@@ -14,7 +14,8 @@ module.exports.login = function(req, res){
 						lastname: userData.lastname,
 						mnumber: userData.mnumber,
 						username: userData.username,
-						email: req.body.email
+						email: req.body.email,
+						profilePhoto: userData.profilePhoto
 					});
 			
 		} 

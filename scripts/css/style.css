@@ -59,3 +59,40 @@ form .progress {
     width: 0;
 }
 
+/* for navbar */
+.navbar-default .navbar-nav > li.dropdown:hover > a, 
+.navbar-default .navbar-nav > li.dropdown:hover > a:hover,
+.navbar-default .navbar-nav > li.dropdown:hover > a:focus {
+    background-color: rgb(231, 231, 231);
+    color: rgb(85, 85, 85);
+}
+li.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+#propic {
+	display:inline-block;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+
+}
+#profilepic {
+	display:inline-block;
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+
+}
+
+.navbar-text img {
+  max-height:30px;
+  width:auto;
+  vertical-align:middle;
+}

@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container" ng-controller="editProfileController">
 
-  <div class="panel panel-info">
+  <div class="panel panel-info" ng-show="!edit">
     <div class="panel-heading">
       <h2>User Detalis</h2>
     </div>
@@ -19,5 +19,34 @@
     <div class="panel-body">
      Email:  {{data.email}}
     </div>
+    <div class="panel-body">
+        <button class="button btn-primary" ng-click="editProfile()">Edit Profile</button>
+    </div>
+  </div>
+
+  <div class="panel panel-info" ng-show="edit">
+    <div class="panel-heading">
+      <h2>User Detalis</h2>
+    </div>
+    <div class="panel-body">
+     First Name:  <input type="text" ng-model="data.firstname">
+    </div>
+    <div class="panel-body">
+     Last Name: <input type="text" ng-model="data.lastname"> 
+    </div>
+    <div class="panel-body">
+     Phone Number: <input type="number" ng-model="data.mnumber"> 
+    </div>
+    <div class="panel-body">
+     Username: <input type="text" ng-model="data.username">
+    </div>
+    <div class="panel-body">
+        <button class="button btn-primary" ng-click="save()">Save</button>&nbsp;
+        <button class="button btn-primary" ng-click="cancel()">Cancel</button>
+    </div>
+    
+        
+   
+
   </div>
 </div>
